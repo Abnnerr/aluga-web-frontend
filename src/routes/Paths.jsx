@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import PageNotFound from "../pages/PageNotFound";
 import PageLayout from "../layout/PageLayout";
 import Login from "../pages/Login";
-import Home from "../pages/Home";
+import Home from "../pages/Home
 
 const Paths = () => {
     return (
@@ -10,7 +10,7 @@ const Paths = () => {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<PageLayout />} >
-                        <Route index element={<Home />} />
+                        <Route index element={<Home /><'} />
                         <Route  path="/pesquisa"/>
                     </Route>
                     <Route  path="/login" element={<Login />}/>

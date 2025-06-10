@@ -11,7 +11,6 @@ const App = () => {
       <UsuarioProvider>
         <Paths />
       </UsuarioProvider>
-      
     </>
   );
 }
