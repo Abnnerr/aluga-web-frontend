@@ -39,6 +39,10 @@ const Card = ({
                 <button className="  bg-orange-100 p-3  rounded-xl hover:bg-orange-200  duration-700 text-center flex items-center">
                     <box-icon name="heart" color="#DF4300"></box-icon>
                 </button>
+
+
+
+                
                 <div className="text-right">
                     <div className="text-[#DF4300] font-bold text-2xl">{preco}</div>
                     <button className="mt-2 bg-orange-100 text-orange-600 px-4 py-2 rounded-md font-medium hover:bg-orange-200 duration-700">
