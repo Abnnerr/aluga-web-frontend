@@ -1,6 +1,7 @@
-import { use, useRef, useState } from "react";
+import { use, useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import dados from "../api/api.json";
+import { UsuarioContext } from "../contexts/UsuarioContext";
 
 const Login = () => {
 
@@ -8,6 +9,8 @@ const Login = () => {
     const senhaRef = useRef();
     const emailTxtRef = useRef();
     const senhaTxtRef = useRef();
+
+    const { setLogado }  = useContext(UsuarioContext)
 
 
     const [email, setEmail] = useState("Email");

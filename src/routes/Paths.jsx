@@ -3,6 +3,7 @@ import PageNotFound from "../pages/PageNotFound";
 import PageLayout from "../layout/PageLayout";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
+import Imoveis from "../pages/Imoveis";
 
 const Paths = () => {
     return (
@@ -14,6 +15,7 @@ const Paths = () => {
                         <Route  path="/pesquisa"/>
                     </Route>
                     <Route  path="/login" element={<Login />}/>
+                    <Route  path="/imoveis" element={<Imoveis />} />
                     <Route  path="*" element={<PageNotFound />}/>
                 </Routes>
             </BrowserRouter>
