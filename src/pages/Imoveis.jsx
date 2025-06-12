@@ -1,4 +1,3 @@
-
 const Imoveis = () => {
     return (
         <div>
@@ -9,14 +8,6 @@ const Imoveis = () => {
 }
 
 export default Imoveis;
-
-
-
-
-
-
-
-
 
 
 
