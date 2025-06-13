@@ -17,6 +17,7 @@ const Header = () => {
                 {
                     logado ? (
                         'entrou'
+                        
                     ) :
                         <>
                             <a href='/login' className="flex items-center cursor-pointer bg-orange-100 text-orange-600 px-4 py-2 rounded-md font-medium hover:bg-orange-200 duration-700">
