@@ -8,6 +8,7 @@ import QuantidadeGaragens from "../components/QuantidadeGaragens";
 import QuantidadeQuartos from "../components/QuantidadeQuartos";
 import TiposImovel from "../components/TiposImovel";
 import Localizacao from "../components/Localizacao";
+import FiltroPreco from "../components/FiltroPreco";
 
 const Imoveis = () => {
     return (
@@ -20,6 +21,7 @@ const Imoveis = () => {
                         <div className="flex flex-col  *:px-[20px] *:py-[30px] *:border *:border-[#00000026]">
                             <Localizacao />
                             <TiposImovel />
+                            <FiltroPreco />
                             <QuantidadeGaragens />
                             <QuantidadeQuartos />
                             <QuantidadeBanheiros />
