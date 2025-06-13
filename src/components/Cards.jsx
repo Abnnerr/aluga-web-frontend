@@ -40,8 +40,6 @@ const Card = ({
                     <box-icon name="heart" color="#DF4300"></box-icon>
                 </button>
 
-
-
                 
                 <div className="text-right">
                     <div className="text-[#DF4300] font-bold text-2xl">{preco}</div>
