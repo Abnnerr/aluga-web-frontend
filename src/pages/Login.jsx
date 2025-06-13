@@ -1,7 +1,7 @@
-import { use, useContext, useRef, useState } from "react";
+import {useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router";
-import dados from "../api/api.json";
 import { UsuarioContext } from "../contexts/UsuarioContext";
+import { AXIOS } from "../services";
 
 const Login = () => {
 
@@ -10,7 +10,7 @@ const Login = () => {
     const emailTxtRef = useRef();
     const senhaTxtRef = useRef();
 
-    const { setLogado }  = useContext(UsuarioContext)
+    const { setLogado } = useContext(UsuarioContext)
 
 
     const [email, setEmail] = useState("Email");
@@ -19,60 +19,33 @@ const Login = () => {
 
     const navigate = useNavigate()
 
-    function loginUsuario(event) {
+    async function loginUsuario(event) {
         event.preventDefault();
 
         const emailValue = emailRef.current.value;
         const senhaValue = senhaRef.current.value;
 
 
-        const dadosUsuario = dados.usuario.find((item) =>
-            item.usuario_email == emailValue &&
-            item.usuario_senha == senhaValue
-        );
-        const verificaSenha = dados.usuario.some((item) => item.usuario_senha == senhaValue);
-        const verificaEmail = dados.usuario.some((item) => item.usuario_email == emailValue);
-
-        const data = dadosUsuario;
-
-        // setEmail('Email');
-        // setSenha('Senha');
-
-        emailRef.current.classList.remove("border-red-500");
-        senhaRef.current.classList.remove("border-red-500");
-        emailTxtRef.current.classList.remove("text-red-500");
-        senhaTxtRef.current.classList.remove("text-red-500");
-
-        if (data) {
-            console.log('verdadeiro')
-            setLogado(true)
-            navigate('/')
-        }
-        else if (verificaEmail == false && verificaSenha == false) {
-            emailRef.current.classList.add('border-red-500');
-            senhaRef.current.classList.add('border-red-500');
-
-            setEmail('*Email');
-            setSenha('*Senha');
-
-            emailTxtRef.current.classList.add('text-red-500');
-            senhaTxtRef.current.classList.add('text-red-500');
-        }
-        else if (verificaEmail == false) {
-            emailRef.current.classList.add('border-red-500');
-
-            setEmail('*Email');
-
-            emailTxtRef.current.classList.add('text-red-500')
-        }
-        else if (verificaSenha == false) {
-            senhaRef.current.classList.add('border-red-500');
-
-            setSenha('*Senha');
-
-            senhaTxtRef.current.classList.add('text-red-500')
+        let dados = {
+            usuario_email: emailValue,
+            usuario_senha: senhaValue
         }
 
+        try {
+            const request = await AXIOS.post('/login', dados)
+            console.log(request.data);
+
+            if(request.data.token) {
+                sessionStorage.setItem('token',request.data.token)
+                sessionStorage.setItem('usuario',JSON.stringify(request.data.usuario))
+                setLogado(true)
+                navigate('/imoveis')
+            }
+
+        } catch (error) {
+            console.log('deu ruim', error.message);
+            
+        }
 
     }
 

@@ -14,8 +14,8 @@ const Cadastro = () => {
 
 
     // const { setLogado } = useContext(UsuarioContext)
-    // const navigate = useNavigate()
-    // 
+    const navigate = useNavigate()
+    
 
     async function cadastro(event) {
         event.preventDefault();
@@ -41,9 +41,10 @@ const Cadastro = () => {
         try {
             let request = await AXIOS.post('/cadastro', dados);
             console.log("Cadastro feito:", request.data);
+            navigate('/imoveis')
 
         } catch (erro) {
-            console.log("deu ruim", erro)
+            console.log("deu ruim", erro.message)
         }
 
     }

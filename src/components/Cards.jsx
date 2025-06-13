@@ -13,7 +13,7 @@ const Card = ({
     preco = "R$ 5.000"
 }) => {
     return (
-        <div className="flex bg-white rounded-lg w-[795px] shadow p-4 mb-4 border">
+        <div className="flex bg-white rounded-lg  shadow p-4 mb-4 border">
             <img
                 src={imagem}
                 alt="Foto do imóvel"
