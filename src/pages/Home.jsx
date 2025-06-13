@@ -13,7 +13,6 @@ const Home = () => {
             </div>
             <img src="src/assets/imgmulher.png" alt="" className="h-[450px] mt-16 " />
         </div>
-
     );
 }
 

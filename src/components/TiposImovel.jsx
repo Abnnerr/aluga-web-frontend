@@ -3,43 +3,39 @@ import { useState } from "react";
 const TiposImovel = () => {
     const [selected, setSelected] = useState(1);
     return (
-        <div className="px-20 p-4 w-[390px] flex flex-col  ">
-            <h6 className="p-4 text-[16px] font-bold ml-[10px]">Tipo de imóveis</h6>
+        <div className="flex flex-col gap-2 ">
+            <h6 className="text-[16px] font-bold">Tipo de imóveis</h6>
             <div className="flex gap-6">
-
-                
-                {/* <button className="p-3 flex flex-col items-center gap-[2px] w-[75px] h-[75px] rounded-[10px] bg-[#E04300] text-white cursor-pointer" >
-                    <box-icon name='home' color="white"></box-icon>               Casa
-                </button>
-
-                <button className="w-[109px] h-[75px] rounded-[10px] bg-[#E0430070] text-orange-700 cursor-pointer"><box-icon name='buildings' color="#E04300"></box-icon>Apartamento
-                </button> */}
                 {[1, 2].map((num) => (
                     <button
                         key={num}
                         onClick={() => setSelected(num)}
-                        className={`px-4 py-1 rounded-[8px] text-lg font-medium border text-white cursor-pointer`}
+                        className={`px-4 py-3 rounded-[8px] text-lg font-medium border text-white cursor-pointer duration-700`}
                         style={{
                             backgroundColor: selected === num ? "#E04300" : "#E0430033",
                             borderColor: selected === num ? "#E04300" : "#E0430033",
+                            color: selected === num ? "white" : "#E04300B2",
+                            fill: selected == num ? "white": "#E04300B2"
                         }}
                     >
                         {
                             (num == 2) ? (
                                 <>
-                                    <box-icon name='buildings' color="white"></box-icon>
-                                    Apartamento
+                                    <div className="flex flex-col items-center">
+                                        <box-icon name='buildings' color="white"></box-icon>
+                                        Apartamento
+                                    </div>
                                 </>
-                            ) : <>
-                                <box-icon name='home' color="white"></box-icon>
-                                Casa
-
-                            </>
+                            ) :
+                                <>
+                                    <div className="flex flex-col items-center">
+                                        <box-icon name='home' color="white"></box-icon>
+                                        Casa
+                                    </div>
+                                </>
                         }
                     </button>
                 ))}
-
-
             </div>
         </div>
     );

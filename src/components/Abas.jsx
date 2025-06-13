@@ -4,9 +4,9 @@ const Abas = () => {
   const [selected, setSelected] = useState("Comprar");
 
   return (
-    <div className="flex items-center gap-2 p-4 rounded-lg ">
+    <div className="flex items-center rounded-lg ">
       <button
-        className={`w-[191px] h-[53px] rounded-tl-[12px] rounded-tr-[12px] text-lg font-medium border ${
+        className={`w-[191px] h-[53px] rounded-tl-lg  text-lg font-medium border duration-700 cursor-pointer ${
           selected === "Comprar"
             ? "text-white border-red-600"
             : "bg-gray-200 text-black border-gray-300"
@@ -19,7 +19,7 @@ const Abas = () => {
         Comprar
       </button>
       <button
-        className={`w-[191px] h-[53px] rounded-tr-[12px] text-lg font-medium border ${
+        className={`w-[191px] h-[53px]  rounded-tr-lg text-lg font-medium border duration-700 cursor-pointer ${
           selected === "Alugar"
             ? "text-white border-red-600"
             : "bg-gray-200 text-black border-gray-300"
