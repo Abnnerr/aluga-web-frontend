@@ -1,4 +1,4 @@
-import { createContext, useState} from "react";
+import { createContext, useEffect, useState } from "react";
 
 
 export const UsuarioContext = createContext()
@@ -6,11 +6,21 @@ export const UsuarioContext = createContext()
 
 const UsuarioProvider = ({ children }) => {
     const [logado, setLogado] = useState(false);
-    const usuarioInfo = sessionStorage.getItem('usuario')
-    
+    const [usuario, setUsuario] = useState({})
+
+
+    useEffect(() => {
+        let token = sessionStorage.getItem('token')
+
+        if (token) {
+            setLogado(true)
+            setUsuario(JSON.parse(sessionStorage.getItem("usuario")))
+        }
+
+    }, [logado])
 
     return (
-        <UsuarioContext.Provider value={{ logado, setLogado, usuarioInfo }}>
+        <UsuarioContext.Provider value={{ logado, setLogado, usuario}}>
             {children}
         </UsuarioContext.Provider>
     );

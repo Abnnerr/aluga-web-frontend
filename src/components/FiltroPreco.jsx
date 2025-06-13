@@ -1,8 +1,4 @@
 
-
-
-
-
 const FiltroPreco = () => {
     return (
         <div className="p-4 border rounded-md w-full max-w-sm bg-white">
@@ -14,12 +10,12 @@ const FiltroPreco = () => {
                 <input
                     type="number"
                     placeholder="0"
-                    className="w-full  border-gray-300 bg-gray-100 px-4 py-2 outline-none text-gray-700"
+                    className="w-full  rounded-lg border-gray-300 bg-gray-100 px-4 py-2 outline-none text-gray-700"
                 />
                 <input
                     type="number"
                     placeholder="0"
-                    className="w-full border-gray-300 bg-gray-100  px-4 py-2 outline-none text-gray-700"
+                    className="w-full rounded-lg border-gray-300 bg-gray-100  px-4 py-2 outline-none text-gray-700"
                 />
             </div>
         </div>
