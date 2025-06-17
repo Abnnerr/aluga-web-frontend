@@ -1,0 +1,83 @@
+
+import  { useState } from "react";
+
+const CadastroImoveis = () => {
+  const [imoveis, setImoveis] = useState([]);
+  const [formData, setFormData] = useState({
+    titulo: "",
+    endereco: "",
+    preco: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setImoveis([...imoveis, formData]);
+    setFormData({ titulo: "", endereco: "", preco: "" });
+  };
+
+  return (
+    <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg">
+      <h2 className="text-2xl font-bold text-center mb-4">Cadastro de Imóveis</h2>
+
+      {/* Formulário */}
+      <form onSubmit={handleSubmit} className="flex flex-col space-y-3">
+        <input
+          type="text"
+          name="titulo"
+          placeholder="Título"
+          value={formData.titulo}
+          onChange={handleChange}
+          required
+          className="p-2 border rounded-md"
+        />
+        <input
+          type="text"
+          name="endereco"
+          placeholder="Endereço"
+          value={formData.endereco}
+          onChange={handleChange}
+          required
+          className="p-2 border rounded-md"
+        />
+        <input
+          type="number"
+          name="preco"
+          placeholder="Preço"
+          value={formData.preco}
+          onChange={handleChange}
+          required
+          className="p-2 border rounded-md"
+        />
+
+        <input
+          type="number"
+          name="area"
+          placeholder="area"
+          value={formData.preco}
+          onChange={handleChange}
+          required
+          className="p-2 border rounded-md"
+        />
+        <button type="submit" className="p-2 bg-[#E04300] text-white rounded-md ">
+          Cadastrar
+        </button>
+      </form>
+
+      {/* Lista de imóveis cadastrados */}
+      <h3 className="text-xl font-semibold mt-6">Imóveis Cadastrados</h3>
+      <ul className="mt-3 space-y-2">
+        {imoveis.map((imovel, index) => (
+          <li key={index} className="p-3 border rounded-md shadow-sm">
+            <strong>{imovel.titulo}</strong> - {imovel.endereco} - R$ {imovel.preco}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default CadastroImoveis;

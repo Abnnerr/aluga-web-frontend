@@ -1,6 +1,8 @@
+
 import QuantidadeBanheiros from "../components/QuantidadeBanheiros";
 import QuantidadeGaragens from "../components/QuantidadeGaragens";
 import QuantidadeQuartos from "../components/QuantidadeQuartos";
+
 
 const Imoveis = () => {
     return (
