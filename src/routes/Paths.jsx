@@ -4,6 +4,8 @@ import PageLayout from "../layout/PageLayout";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 import Imoveis from "../pages/Imoveis";
+import Cadastro from "../pages/Cadastro";
+
 
 const Paths = () => {
     return (
@@ -12,11 +14,11 @@ const Paths = () => {
                 <Routes>
                     <Route path="/" element={<PageLayout />} >
                         <Route index element={<Home />} />
-                        <Route  path="/pesquisa"/>
+                        <Route path="/imoveis" element={<Imoveis />} />
                     </Route>
-                    <Route  path="/login" element={<Login />}/>
-                    <Route  path="/imoveis" element={<Imoveis />} />
-                    <Route  path="*" element={<PageNotFound />}/>
+                    <Route path="/cadastro" element={<Cadastro />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="*" element={<PageNotFound />} />
                 </Routes>
             </BrowserRouter>
         </>
