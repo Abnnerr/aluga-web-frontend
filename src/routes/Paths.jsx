@@ -3,8 +3,8 @@ import PageNotFound from "../pages/PageNotFound";
 import PageLayout from "../layout/PageLayout";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
-import Imoveis from "../pages/Imoveis";
 import Cadastro from "../pages/Cadastro";
+import Imoveis from "../pages/imoveis";
 
 
 const Paths = () => {
