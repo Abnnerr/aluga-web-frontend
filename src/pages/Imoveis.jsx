@@ -10,6 +10,7 @@ import TiposImovel from "../components/TiposImovel";
 import Localizacao from "../components/Localizacao";
 import FiltroPreco from "../components/FiltroPreco";
 
+
 const Imoveis = () => {
     return (
         <main>
@@ -38,14 +39,6 @@ const Imoveis = () => {
 }
 
 export default Imoveis;
-
-
-
-
-
-
-
-
 
 
 
