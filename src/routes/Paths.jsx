@@ -4,7 +4,7 @@ import PageLayout from "../layout/PageLayout";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 import Cadastro from "../pages/Cadastro";
-import Imoveis from "../pages/imoveis";
+import Imoveis from "../pages/Imoveis";
 import CadastroImoveis from "../pages/CadastroImoveis";
 import Favorito from "../pages/Favorito";
 

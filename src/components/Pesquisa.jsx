@@ -16,7 +16,7 @@ const Pesquisa = () => {
     }
 
     return (
-        <div className="flex items-center gap-[330px]  justify-between py-4 ">
+        <div className="flex items-center gap-[250px]  justify-between py-4 ">
             <div>
                 <nav className="flex items-center text-gray-500 text-sm gap-1">
                     Casas para {filtro.modalidade}

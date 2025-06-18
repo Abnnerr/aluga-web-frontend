@@ -37,7 +37,7 @@ const ListarImoveis = () => {
             {imoveis.map((imovel) => (
                 <Card
                     key={imovel.imovel_id}
-                    imagem={imovel.imovel_img}
+                    // imagem={imovel.imovel_img}
                     logradouro={imovel.imovel_logradouro}
                     tipo={imovel.imovel_tipo}
                     bairro={imovel.imovel_bairro}
@@ -46,7 +46,7 @@ const ListarImoveis = () => {
                     quarto={imovel.imovel_quarto}
                     garagem={imovel.imovel_garagem}
                     banheiro={imovel.imovel_banheiro}
-                    preco={`R$ ${imovel.imovel_tipo == "Casa" ? imovel.imovel_valor : imovel.imovel_valor_condominio}`}
+                    preco={`R$ ${imovel.imovel_tipo == "Casa" ? imovel.imovel_valor : imovel.imovel_valor_condominio = '10000'}`}
                     logado={logado}
                     imovelId={imoveis.imovel_id}
                 />
