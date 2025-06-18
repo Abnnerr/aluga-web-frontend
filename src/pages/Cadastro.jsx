@@ -41,7 +41,7 @@ const Cadastro = () => {
         try {
             let request = await AXIOS.post('/cadastro', dados);
             console.log("Cadastro feito:", request.data);
-            navigate('/imoveis')
+            navigate('/')
 
         } catch (erro) {
             console.log("deu ruim", erro.message)

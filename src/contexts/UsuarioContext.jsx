@@ -7,8 +7,23 @@ export const UsuarioContext = createContext()
 const UsuarioProvider = ({ children }) => {
     const [logado, setLogado] = useState(false);
     const [usuario, setUsuario] = useState({})
+    const [imoveis, setImoveis] = useState([]);
 
-
+    const [filtro, setFiltro] = useState({
+        estado: "",
+        banheiro: "",
+        quarto: "",
+        garagem: "",
+        local: "",
+        tipoImovel: "",
+        modalidade: "",
+    })
+    function atualizarFiltro(chave, valor) {
+        setFiltro((anterior) => ({
+            ...anterior,
+            [chave]: valor,
+        }))
+    }
     useEffect(() => {
         let token = sessionStorage.getItem('token')
 
@@ -20,7 +35,7 @@ const UsuarioProvider = ({ children }) => {
     }, [logado])
 
     return (
-        <UsuarioContext.Provider value={{ logado, setLogado, usuario}}>
+        <UsuarioContext.Provider value={{ logado, setLogado, usuario, atualizarFiltro, filtro, imoveis, setImoveis }}>
             {children}
         </UsuarioContext.Provider>
     );

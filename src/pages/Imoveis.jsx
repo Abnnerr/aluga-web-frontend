@@ -9,12 +9,13 @@ import QuantidadeQuartos from "../components/QuantidadeQuartos";
 import TiposImovel from "../components/TiposImovel";
 import Localizacao from "../components/Localizacao";
 import FiltroPreco from "../components/FiltroPreco";
+import ListarImoveis from "../components/ListarImoveis";
 
 
 const Imoveis = () => {
     return (
         <main>
-            <div className="px-[30px] flex ">
+            <div className="px-[30px] flex justify-between">
                 <div className="flex flex-col py-8 gap-4" >
                     <Filtro />
                     <div className="border-[#00000026] border rounded-lg flex flex-col">
@@ -31,7 +32,7 @@ const Imoveis = () => {
                 </div>
                 <div className="px-4">
                     <Pesquisa />
-                    <Card />
+                    <ListarImoveis />
                 </div>
             </div>
         </main>

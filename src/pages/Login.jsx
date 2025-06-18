@@ -39,7 +39,7 @@ const Login = () => {
                 sessionStorage.setItem('token',request.data.token)
                 sessionStorage.setItem('usuario',JSON.stringify(request.data.usuario))
                 setLogado(true)
-                navigate('/imoveis')
+                navigate('/')
             }
 
         } catch (error) {

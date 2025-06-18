@@ -4,11 +4,12 @@ import { UsuarioContext } from '../contexts/UsuarioContext';
 
 const Header = () => {
 
-    const { logado, usuario } = useContext(UsuarioContext)
+    const { logado, usuario,setLogado } = useContext(UsuarioContext)
 
     async function sair() {
         sessionStorage.removeItem('usuario')
         sessionStorage.removeItem('token')
+        setLogado(false)
     }
 
     return (
@@ -24,9 +25,12 @@ const Header = () => {
                     logado ? (
 
                         <div className='flex items-center gap-[10px]'>
-                            <div>
-                                <h1>{usuario.usuario_nome}</h1>
-                                <button onClick={sair}>Sair</button>
+                            <div className="flex items-center gap-[40px]">
+                                <a href="/favoritos" className='font-bold underline hover:text-[#e65100] duration-700'>Favoritos</a>
+                                <div className="flex flex-col items-end">
+                                    <h1 className="text-[20px] font-bold text-5xl text-[#e65100]">{usuario.usuario_nome}</h1>
+                                    <button onClick={sair} className='cursor-pointer font-bold'>Sair</button>
+                                </div>
                             </div>
 
                             <div className='w-[50px] h-[50px] rounded-[100%] text-center bg-[#e65100]'>
