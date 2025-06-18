@@ -8,7 +8,8 @@ const UsuarioProvider = ({ children }) => {
     const [logado, setLogado] = useState(false);
     const [usuario, setUsuario] = useState({})
     const [imoveis, setImoveis] = useState([]);
-
+    console.log(imoveis);
+    
     const [filtro, setFiltro] = useState({
         estado: "",
         banheiro: "",
@@ -17,6 +18,8 @@ const UsuarioProvider = ({ children }) => {
         local: "",
         tipoImovel: "",
         modalidade: "",
+        precoMin: "",
+        precoMax: ""
     })
     function atualizarFiltro(chave, valor) {
         setFiltro((anterior) => ({

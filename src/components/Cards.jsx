@@ -6,6 +6,7 @@ import { AXIOS } from "../services";
 
 
 const Card = ({
+    imovelId,
     imagem,
     tipoImovel,
     endereco,
@@ -22,16 +23,16 @@ const Card = ({
     const {usuario, setUsuario, imoveis} = useContext(UsuarioContext)
     async function favoritar() {
 
-        // try {
-        //     let dados = {
-        //         usuario_id: usuario.usuario_id,
-        //         imovel_id: imoveis.imovel_id
-        //     }
-        //     const request =  AXIOS.post('/favoritos', dados)
-        //     alert(request.data)
-        // } catch (error) {
-            
-        // }
+        try {
+            let dados = {
+                usuario_id: usuario.usuario_id,
+                imovel_id: imovelId
+            }
+            const request =  AXIOS.post('/favoritos', dados)
+            alert(request.data)
+        } catch (error) {
+            alert("deuRuim")
+        }
 
 
     }

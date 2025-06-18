@@ -48,6 +48,7 @@ const ListarImoveis = () => {
                     banheiro={imovel.imovel_banheiro}
                     preco={`R$ ${imovel.imovel_tipo == "Casa" ? imovel.imovel_valor : imovel.imovel_valor_condominio}`}
                     logado={logado}
+                    imovelId={imoveis.imovel_id}
                 />
             ))}
         </div>
