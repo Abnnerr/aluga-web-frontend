@@ -24,7 +24,7 @@ const Paths = () => {
                     <Route path="/login" element={<Login />} />
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
-            </BrowserRouter>
+            </HashRouter>
         </>
     );
 }
