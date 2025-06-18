@@ -1,4 +1,4 @@
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router";
+import { BrowserRouter, Route, Routes } from "react-router";
 import PageNotFound from "../pages/PageNotFound";
 import PageLayout from "../layout/PageLayout";
 import Login from "../pages/Login";
@@ -12,7 +12,7 @@ import Favorito from "../pages/Favorito";
 const Paths = () => {
     return (
         <>
-            <HashRouter>
+            <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<PageLayout />} >
                         <Route index element={<Home />} />
@@ -24,7 +24,7 @@ const Paths = () => {
                     <Route path="/login" element={<Login />} />
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
-            </HashRouter>
+            </BrowserRouter>
         </>
     );
 }
