@@ -8,7 +8,7 @@ const ListarImoveis = () => {
     const { filtro, logado,imoveis, setImoveis } = useContext(UsuarioContext);
 
     useEffect(() => {
-        async function buscar() {
+        async function atualizar() {
             try {
                 const dadosFiltro = {
                     imovel_estado: filtro.estado,
@@ -25,7 +25,7 @@ const ListarImoveis = () => {
                 console.error("Erro ao buscar imóveis:", error.message);
             }
         }
-        buscar();
+        atualizar();
     }, [filtro]);
     console.log(imoveis)
     return (

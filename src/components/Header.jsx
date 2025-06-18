@@ -34,7 +34,7 @@ const Header = () => {
                             </div>
 
                             <div className='w-[50px] h-[50px] rounded-[100%] text-center bg-[#e65100]'>
-                                <img src="/src/assets/imgmulher.png" alt="" />
+                                <img src="" alt="" />
                             </div>
                         </div>
 
